@@ -20,20 +20,7 @@ class Response
 
     public function isOk()
     {
-        return $this->getHttpCode() >= 200 && $this->getHttpCode() <= 299 && $this->getErrorCode() === null;
-    }
-
-    public function getErrorCode()
-    {
-        return $this->getContentData("error_code") ? intval($this->getContentData("error_code")) : null;
-    }
-
-    public function getErrorMessage()
-    {
-        if ($this->getErrorCode() === null || $this->getContentData("error") === null) {
-            return "";
-        }
-        return ucfirst($this->getContentData("error")).".";
+        return $this->getHttpCode() >= 200 && $this->getHttpCode() <= 299;
     }
 
     public function getContent()
@@ -46,18 +33,8 @@ class Response
         return $this->content;
     }
 
-    public function isEmpty()
-    {
-        return empty($this->getRawContent());
-    }
-
     public function getHttpCode()
     {
         return $this->httpCode;
-    }
-
-    private function getContentData($key)
-    {
-        return array_key_exists($key, $this->getContent()) ? $this->getContent()[$key] : null;
     }
 }
