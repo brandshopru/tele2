@@ -16,24 +16,24 @@ composer require brandshopru/tele2
 ```php
 use Brandshopru\Tele2\Client;
 
-    $login = 'Tele2Login';
-    $password = 'Tele2Password';
-    
-    $Tele2Client = new Client($login, $password);
-    
-    $phone = "+76543210987";
-    $message = "Привет, нам не хватает только тебя ;)";
-    $brandsname = "BRANDSHOP";
-    
-    try {
-        $result = $Tele2Client->sendSms($phone, $message, $brandsname);
-        if ($result->isOk()) {
-            // сообщение отправлено
-            $details = $result->getContent();
-        } else {
-            // что-то пошло не так
-        }
-    } catch (Exception $error) {
-        //обрабатываем исключение
+$login = 'Tele2Login';
+$password = 'Tele2Password';
+
+$Tele2Client = new Client($login, $password);
+
+$phone = "+76543210987";
+$message = "Привет, нам не хватает только тебя ;)";
+$brandsname = "BRANDSHOP";
+
+try {
+    $result = $Tele2Client->sendSms($phone, $message, $brandsname);
+    if ($result->isOk()) {
+        // сообщение отправлено
+        $details = $result->getContent();
+    } else {
+        // что-то пошло не так
     }
+} catch (Exception $error) {
+    //обрабатываем исключение
+}
 ```
