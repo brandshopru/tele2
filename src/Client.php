@@ -57,6 +57,7 @@ class Client
             "operation" => $cmd,
             "login" => $this->login,
             "password" => $this->password,
+            "format" => ext,
         ]);
 
         $client = new \GuzzleHttp\Client([
