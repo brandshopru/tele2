@@ -52,7 +52,7 @@ class Client
      */
     private function request($cmd, $data = [])
     {
-        $base_url = "https://bsms.tele2.ru/api/";
+        $base_url = "https://bsms.t2.ru/api/";
         $data = array_merge($data, [
             "operation" => $cmd,
             "login" => $this->login,
