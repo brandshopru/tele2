@@ -2,9 +2,10 @@
     "name": "brandshopru/tele2",
     "description": "PHP client for Tele2",
     "type": "library",
+    "version": "1.0.7",
     "require": {
         "php": "^7.1 || ^8.0",
-        "guzzlehttp/guzzle": "^6.0.0"
+        "guzzlehttp/guzzle": "7.*"
     },
     "license": "MIT",
     "authors": [
